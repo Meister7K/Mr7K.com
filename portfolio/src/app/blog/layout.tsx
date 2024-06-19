@@ -1,25 +1,29 @@
-import Link from "next/link"
+import { AwaitedReactNode, FC, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from 'react';
+import Link from 'next/link';
+import blogs from '../../lib/blogData'; // This will be your blog data
 
-const blogsList = [{title:'pro1', href:"blog/1", id:"1"}, {title:'pro2', href:"blog/2", id:"2"},
-    {title:'pro3', href:"blog/3", id:"3"}
-]
+interface BlogLayoutProps {
+  children: ReactNode;
+}
 
-export default function blogLayout({
-    children, // will be a page or nested layout
-  }: {
-    children: React.ReactNode
-  }) {
-    return (
-      <section className="flex flex-row w-full">
-        <nav className=" w-1/12 min-w-10 flex flex-col justify-between align-middle h-full static">
-            {blogsList.map((blog,i)=>(
-                <Link key={i} href={blog.href}>{blog.title}</Link>
-                ))}
-        </nav>
-        <div className="w-5/6 ml-">
-             {children}
-        </div>
-       
-      </section>
-    )
-  }
+// Blog layout component to structure the blog page
+const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
+  return (
+    <div className="flex">
+      <nav className="w-1/4 p-4">
+        <ul>
+          {blogs.map((blog: { id: Key | null | undefined; title: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }) => (
+            <li key={blog.id} className="mb-2">
+              <Link href={`/blog/${blog.id}`}>
+                {blog.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <main className="flex-1 p-4">{children}</main>
+    </div>
+  );
+};
+
+export default BlogLayout;
