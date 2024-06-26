@@ -15,19 +15,19 @@ const heroData = {
 
 const blogData={
   src: "/clouds-2.jpg", 
-  title: "Hero Image",
-  description: "Hero Image Desc.",
+  title: "Blog 1",
+  description: "Blog Desc.",
   alt: "hero image",
-  href: "/projects",
+  href: "/blogs",
   width: 2000,
   height:500
 }
 
 const projectData={
   src: "/clouds-2.jpg", 
-  title: "Hero Image",
+  title: "Project 1",
   description: "Hero Image Desc.",
-  alt: "hero image",
+  alt: "Project Desc.",
   href: "/projects",
   width: 2000,
   height:500
@@ -45,7 +45,7 @@ export default function Home() {
         <HeroSection {...heroData}/>
 
       </section>
-      <section className="secondary-section flex flex-col m-2 justify-evenly box-border">
+      <section className="secondary-section flex lg:flex-row flex-col m-2 justify-evenly box-border gap-2">
         {/* !Secondary component list */}
         <SecondarySection {...blogData}/>
         <SecondarySection {...projectData}/>
