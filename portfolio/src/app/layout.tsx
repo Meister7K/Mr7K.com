@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -24,20 +25,24 @@ export default function RootLayout({
 
 
 
-      <body className={cn("relative h-full font-sans antialiased")}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Suspense fallback={<Loading />}><Navbar />
-            {children}</Suspense></ThemeProvider>
-      </body>
-      {/* Footer */}
+      
+        <body className={cn("relative h-full font-sans antialiased")}>
+          <Suspense fallback={<Loading />}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+          <Navbar />
+          {children}
+          {/* Footer */}
+          </ThemeProvider></Suspense>
+        </body>
+        
 
 
 
-    </html>
+    </html >
   );
 }

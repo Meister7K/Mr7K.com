@@ -9,8 +9,8 @@ interface BlogPostProps {
   };
 }
 
-const BlogPost = async ({ params }: BlogPostProps) => {
-  const blogId = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+const BlogPost =  ({ params }: BlogPostProps) => {
+  const blogId =  Array.isArray(params.slug) ? params.slug[0] : params.slug;
   const blog = getBlogById(blogId);
 
   // If no blog post is found, show a 404 message

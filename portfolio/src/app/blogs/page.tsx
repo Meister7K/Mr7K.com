@@ -11,7 +11,7 @@ const BlogIndex: FC = () => {
       <ul className="flex w-full h-full flex-col justify-evenly align-middle">
         {blogs.map((blog: Blog) => (
           <li key={blog.id} className="text-center h-fit m-2 w-full">
-            <Link href={`/blog/${blog.id}`} className=" p-2 m-2">
+            <Link href={`/blogs/${blog.id}`} className=" p-2 m-2">
               {blog.src && (
               <div className="mt-2 relative rounded-xl"><h3 className=' top-2 left-2 text-xl p-4 drop-shadow-2xl'>{blog.title}
                   </h3>

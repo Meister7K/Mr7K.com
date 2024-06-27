@@ -41,7 +41,7 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative h-full">
+    <div className="relative">
       {/* Chevron Icon for toggling the sidebar */}
       <div
        ref={chevronRef}
@@ -55,7 +55,7 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
       {/* Sidebar Navigation */}
       <div
       ref={sidebarRef}
-        className={`fixed left-0 top-0 transform transition-transform duration-300 h-full w-full bg-radius rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-radius z-10 ${
+        className={`fixed left-0 top-0 transform transition-transform duration-300 h-full w-1/2 bg-radius rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-radius z-10 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } w-1/2 shadow-lg `}
       >
@@ -63,7 +63,7 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
           <ul className="flex w-full h-full flex-col justify-evenly align-middle">
             {blogs.map((blog: { id: Key; title: string }) => (
               <li key={blog.id} className="text-center h-fit m-2 w-full">
-                <Link href={`/blog/${blog.id}`} className="border p-2 m-2">
+                <Link href={`/blogs/${blog.id}`} className="border p-2 m-2">
                   {blog.title}
                 </Link>
               </li>

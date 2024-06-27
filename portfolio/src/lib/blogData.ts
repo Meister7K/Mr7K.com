@@ -1,4 +1,4 @@
-interface Blog {
+export interface Blog {
     id: string | number;
     title: string;
     src: string | null;
