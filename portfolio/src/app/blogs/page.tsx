@@ -6,8 +6,8 @@ import Image from 'next/image';
 const BlogIndex: FC = () => {
   return (
     <div>
-      <h1 className="text-2xl font-bold">Blog Index</h1>
-      <p className="mt-4">Select a blog post from the menu.</p>
+      <h1 className="text-2xl font-bold text-center">Blog Index</h1>
+      
       <ul className="flex w-full h-full flex-col justify-evenly align-middle">
         {blogs.map((blog: Blog) => (
           <li key={blog.id} className="text-center h-fit m-2 w-full">

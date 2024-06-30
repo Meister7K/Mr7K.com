@@ -1,4 +1,5 @@
 
+import Timeline from "@/components/career/timeline/timeline"
 
 const CareerPage = ()=>{
 
@@ -7,6 +8,7 @@ const CareerPage = ()=>{
     <p>Career</p>
     {/* Skills */}
      {/* timeline */}
+     <Timeline />
      {/* Resume */}
     </div>)
 }
