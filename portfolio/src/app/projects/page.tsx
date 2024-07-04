@@ -7,7 +7,6 @@ const projectIndex: FC = () => {
     return (
       <div>
         <h1 className="text-2xl font-bold">project Index</h1>
-        <p className="mt-4">Select a project post from the menu.</p>
         <ul className="flex w-full h-full flex-col justify-evenly align-middle">
           {projects.map((project: Project) => (
             <li key={project.id} className="text-center h-fit m-2 w-full">

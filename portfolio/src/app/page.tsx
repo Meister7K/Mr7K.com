@@ -1,4 +1,5 @@
 import HeroSection from "@/components/homepage/HeroSection";
+import Icon from "@/components/homepage/HomepageIcon";
 import SecondarySection from "@/components/homepage/SecondarySection";
 import Loading from "@/components/loading/Loading";
 import { getLatestBlog } from "@/lib/blogData";
@@ -23,10 +24,10 @@ const latestProject = getLatestProject();
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center h-full justify-between w-full p-8 box-border">
-      <section className="title flex flex-col justify-evenly align-middle">
-        <h1>Welcome</h1>
-        {/* <Icon/> */}
+    <main className="flex flex-col items-center justify-between w-full p-8 box-border min-h-screen">
+      <section className="title flex flex-col justify-evenly align-middle relative w-full h-screen">
+        <h1 className=" z-20 absolute top-1/3 w-full text-9xl text-center select-none">Welcome</h1>
+        <Icon className="h-screen"/>
       </section>
       <section className="Hero-section">
         <HeroSection {...heroData} />

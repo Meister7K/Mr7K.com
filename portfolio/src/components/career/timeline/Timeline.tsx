@@ -99,7 +99,7 @@ const Timeline = () => {
             <button onClick={() => moveTo(Math.min(points.length - 1, currentPoint + 1))}>Next</button>
             {points.map((_, index) => (
               <button key={index} onClick={() => moveTo(index)}>
-                {`Go to Point ${index + 1}`}
+                {`Go to ${_.year}`}
               </button>
             ))}
           </div>
