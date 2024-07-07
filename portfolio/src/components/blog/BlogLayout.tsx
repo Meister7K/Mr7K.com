@@ -41,7 +41,7 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative ">
+    <div className="relative box-border">
       {/* Chevron Icon for toggling the sidebar */}
       <div
        ref={chevronRef}
@@ -60,7 +60,7 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
         } w-1/2 shadow-lg `}
       >
         <nav className="w-full p-4 h-full">
-          <ul className="flex w-full h-full flex-col justify-evenly align-middle">
+          <ul className="flex h-full flex-col justify-evenly align-middle">
             {blogs.map((blog: { id: Key; title: string }) => (
               <li key={blog.id} className="text-center h-fit m-2 w-full">
                 <Link href={`/blogs/${blog.id}`} className="border p-2 m-2">
@@ -72,7 +72,7 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
         </nav>
       </div>
       {/* Main Content Area */}
-      <main className={`mt-9 transition-all duration-300 ${isSidebarOpen ? 'ml-1/2' : ''} flex-1 p-4`}>
+      <main className={`mt-9 transition-all duration-300 ${isSidebarOpen ? 'ml-1/2' : ''} flex-1 box-border`}>
         {children}
       </main>
     </div>

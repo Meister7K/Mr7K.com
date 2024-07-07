@@ -28,11 +28,11 @@ const Timeline = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [currentPoint, setCurrentPoint] = useState(0);
   const [targetPosition, setTargetPosition] = useState(new THREE.Vector3(10, 10, 10));
-  const [lookAtTarget, setLookAtTarget] = useState(points[0].position);
+  const [lookAtTarget, setLookAtTarget] = useState(points[2].position);
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
 
   const moveTo = (index: number) => {
-    setTargetPosition(points[index].position.clone().add(new THREE.Vector3(0, 5, 10))); // Adjust the camera target position
+    setTargetPosition(points[index].position.clone().add(new THREE.Vector3(0, 2, 5))); // Adjust the camera target position
     setLookAtTarget(points[index].position);
     setCurrentPoint(index);
   };
@@ -49,7 +49,7 @@ const Timeline = () => {
 
   return (
     <>
-      <button onClick={toggleVisibility} className='text-primary absolute z-20 p-2 m-10 bottom-0 left-0 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all'>
+      <button onClick={toggleVisibility} className='rounded-sm text-primary absolute z-30 p-2 m-10 bottom-0 left-0 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all'>
         {isVisible ? 'Hide' : 'Show'}
       </button>
       {isVisible && (
@@ -95,11 +95,11 @@ const Timeline = () => {
             ))}
           </Canvas>
           <div className='absolute z-20 right-0 bottom-0 p-10 m-2 text-primary bg-background'>
-            <button className='text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={resetCamera}>Reset Camera</button>
-            <button className='text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={() => moveTo(Math.max(0, currentPoint - 1))}>Previous</button>
-            <button className='text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={() => moveTo(Math.min(points.length - 1, currentPoint + 1))}>Next</button>
+            <button className='rounded-sm text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={resetCamera}>Reset Camera</button>
+            <button className='rounded-sm text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={() => moveTo(Math.max(0, currentPoint - 1))}>Previous</button>
+            <button className='rounded-sm text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={() => moveTo(Math.min(points.length - 1, currentPoint + 1))}>Next</button>
             {points.map((_, index) => (
-              <button className='text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' key={index} onClick={() => moveTo(index)}>
+              <button className='rounded-sm text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' key={index} onClick={() => moveTo(index)}>
                 {`Go to ${_.year}`}
               </button>
             ))}

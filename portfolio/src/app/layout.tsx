@@ -1,4 +1,4 @@
-// app/layout.tsx
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -9,6 +9,9 @@ import Navbar from "@/components/navbar/Navbar";
 import { cn } from "@/lib/utils";
 import Intro from "@/components/loading/Intro";
 import PageTransition from "@/components/loading/PageTransition";
+import Footer from "@/components/footer/Footer";
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +25,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+
   return (
     <html lang="en" className="h-full">
-      <body className={cn("relative h-full font-sans antialiased", inter.className)}>
+      <body className={cn("relative h-full font-sans antialiased mb-10 bg-background", inter.className)}>
         <Suspense fallback={<Loading />}>
           <Intro/>
             <ThemeProvider
@@ -36,10 +42,12 @@ export default function RootLayout({
               <Navbar />
               <PageTransition>{children}</PageTransition>
               {/* Footer */}
+              
             </ThemeProvider>
           
         </Suspense>
       </body>
+      
     </html>
   );
 }

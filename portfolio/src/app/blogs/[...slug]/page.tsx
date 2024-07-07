@@ -19,7 +19,7 @@ const BlogPost =  ({ params }: BlogPostProps) => {
   }
 
   return (
-    <div className='w-full box-border p-4'>
+    <div className='w-full box-border min-h-screen bg-background mb-20'>
       <div className='relative'>
         <h1 className="text-2xl font-bold m-2 absolute top-4 left-4">{blog.title}</h1>
       {blog.src ? <Image alt="blog image" src={blog.src} width={2000} height={400} /> : null}

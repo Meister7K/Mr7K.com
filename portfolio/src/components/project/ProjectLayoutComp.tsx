@@ -41,7 +41,7 @@ const ProjectLayout: FC<ProjectLayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative px-4 bg-background min-h-screen box-border">
       {/* Chevron Icon for toggling the sidebar */}
       <div
        ref={chevronRef}
@@ -60,10 +60,10 @@ const ProjectLayout: FC<ProjectLayoutProps> = ({ children }) => {
         } w-1/2 shadow-lg `}
       >
         <nav className="w-full p-4 h-full">
-          <ul className="flex w-full h-full flex-col justify-evenly align-middle">
+          <ul className="flex w-full h-full flex-col justify-evenly align-middle box-border">
             {projects.map((project: { id: Key; title: string }) => (
-              <li key={project.id} className="text-center h-fit m-2 w-full">
-                <Link href={`/projects/${project.id}`} className="border p-2 m-2">
+              <li key={project.id} className="text-center h-fit my-2 w-full box-border">
+                <Link href={`/projects/${project.id}`} className="border">
                   {project.title}
                 </Link>
               </li>
@@ -72,7 +72,7 @@ const ProjectLayout: FC<ProjectLayoutProps> = ({ children }) => {
         </nav>
       </div>
       {/* Main Content Area */}
-      <main className={`transition-all duration-300 ${isSidebarOpen ? 'ml-1/2' : ''} flex-1 p-4`}>
+      <main className={`transition-all duration-300 ${isSidebarOpen ? 'ml-1/2' : ''} flex-1`}>
         {children}
       </main>
     </div>

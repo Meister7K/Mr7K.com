@@ -7,7 +7,7 @@ const Logo =()=>{
     return (
         <div className='header' title="click to return home">
             <svg
-   className='logo text-destructive min-w-10 p-2'
+   className='logo text-destructive min-w-20 p-2'
    viewBox="0 0 400 300"
    shapeRendering="geometricPrecision"
    textRendering="geometricPrecision"

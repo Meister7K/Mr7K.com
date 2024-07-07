@@ -20,14 +20,15 @@ const projectPost =  ({ params }: projectPostProps) => {
   }
 
   return (
-    <div className='w-full box-border p-4 mt-9'>
+    <div className='w-full box-border min-h-screen mt-9 bg-background mb-20'>
       <div className='relative'>
         <h1 className="text-2xl font-bold m-2 absolute top-4 left-4">{project.title}</h1>
       {project.src ? <Image alt="project image" src={project.src} width={2000} height={400} /> : null}
       </div>
       
-      <p className="mt-4">{project.content}</p>
-      <Link href={project.link}>Link</Link>
+      <p className="my-4">{project.content}</p>
+      <Link className='p-2 m-2 transition-colors duration-200 rounded-sm bg-secondary hover:bg-destructive' href={project.link}>Link</Link>
+      <Link className='p-2 m-2 transition-colors duration-200 rounded-sm bg-secondary hover:bg-destructive' href={project.github}>Repo</Link>
 
     </div>
   );
