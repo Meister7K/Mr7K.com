@@ -20,7 +20,7 @@ const projectPost =  ({ params }: projectPostProps) => {
   }
 
   return (
-    <div className='w-full box-border p-4'>
+    <div className='w-full box-border p-4 mt-9'>
       <div className='relative'>
         <h1 className="text-2xl font-bold m-2 absolute top-4 left-4">{project.title}</h1>
       {project.src ? <Image alt="project image" src={project.src} width={2000} height={400} /> : null}

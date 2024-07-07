@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 const projectIndex: FC = () => {
     return (
-      <div>
-        <h1 className="text-2xl font-bold">project Index</h1>
+      <div className='mt-9'>
+        <h1 className="text-2xl font-bold text-center">project Index</h1>
         <ul className="flex w-full h-full flex-col justify-evenly align-middle">
           {projects.map((project: Project) => (
             <li key={project.id} className="text-center h-fit m-2 w-full">

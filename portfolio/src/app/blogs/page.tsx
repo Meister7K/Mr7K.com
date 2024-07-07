@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const BlogIndex: FC = () => {
   return (
-    <div>
+    <div className='mt-9'>
       <h1 className="text-2xl font-bold text-center">Blog Index</h1>
       
       <ul className="flex w-full h-full flex-col justify-evenly align-middle">

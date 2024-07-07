@@ -1,12 +1,14 @@
-
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import Loading from '../components/loading/Loading'
 import { ThemeProvider } from "@/components/theme/themeProvider";
 import Navbar from "@/components/navbar/Navbar";
 import { cn } from "@/lib/utils";
+import Intro from "@/components/loading/Intro";
+import PageTransition from "@/components/loading/PageTransition";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,27 +24,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-
-
-
-      
-        <body className={cn("relative h-full font-sans antialiased")}>
-          <Suspense fallback={<Loading />}>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-          <Navbar />
-          {children}
-          {/* Footer */}
-          </ThemeProvider></Suspense>
-        </body>
-        
-
-
-
-    </html >
+      <body className={cn("relative h-full font-sans antialiased", inter.className)}>
+        <Suspense fallback={<Loading />}>
+          <Intro/>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Navbar />
+              <PageTransition>{children}</PageTransition>
+              {/* Footer */}
+            </ThemeProvider>
+          
+        </Suspense>
+      </body>
+    </html>
   );
 }

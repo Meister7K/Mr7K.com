@@ -41,7 +41,7 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {/* Chevron Icon for toggling the sidebar */}
       <div
        ref={chevronRef}
@@ -72,7 +72,7 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
         </nav>
       </div>
       {/* Main Content Area */}
-      <main className={`transition-all duration-300 ${isSidebarOpen ? 'ml-1/2' : ''} flex-1 p-4`}>
+      <main className={`mt-9 transition-all duration-300 ${isSidebarOpen ? 'ml-1/2' : ''} flex-1 p-4`}>
         {children}
       </main>
     </div>

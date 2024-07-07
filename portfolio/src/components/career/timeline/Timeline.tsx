@@ -49,12 +49,12 @@ const Timeline = () => {
 
   return (
     <>
-      <button onClick={toggleVisibility} className='text-primary absolute z-20 p-2 m-10 bottom-0 left-0 bg-background border-solid border-primary hover:bg-destructive transition-all'>
+      <button onClick={toggleVisibility} className='text-primary absolute z-20 p-2 m-10 bottom-0 left-0 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all'>
         {isVisible ? 'Hide' : 'Show'}
       </button>
       {isVisible && (
         <div className="absolute top-0 left-0 w-full h-full box-border flex justify-center align-middle">
-          <Canvas className="h-full bg-white w-full top-0 left-0" shadows>
+          <Canvas className="h-full bg-background w-full top-0 left-0" shadows>
             <CameraControls targetPosition={targetPosition} lookAtTarget={lookAtTarget} />
             <OrbitControls />
             <ambientLight />
@@ -73,9 +73,10 @@ const Timeline = () => {
                     position={[0, 0.5, 0]} // Adjust text position above the point
                     rotation={[0, 0, 0]}
                     fontSize={0.2}
-                    color="black"
+                    color="gray"
                     anchorX="center"
                     anchorY="middle"
+                    
                   >
                     {point.description}
                   </Text>
@@ -84,7 +85,7 @@ const Timeline = () => {
                   position={[0, -0.5, 0]} // Adjust text position below the point
                   rotation={[0, 0, 0]}
                   fontSize={0.2}
-                  color="black"
+                  color="gray"
                   anchorX="center"
                   anchorY="middle"
                 >
@@ -94,11 +95,11 @@ const Timeline = () => {
             ))}
           </Canvas>
           <div className='absolute z-20 right-0 bottom-0 p-10 m-2 text-primary bg-background'>
-            <button onClick={resetCamera}>Reset Camera</button>
-            <button onClick={() => moveTo(Math.max(0, currentPoint - 1))}>Previous</button>
-            <button onClick={() => moveTo(Math.min(points.length - 1, currentPoint + 1))}>Next</button>
+            <button className='text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={resetCamera}>Reset Camera</button>
+            <button className='text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={() => moveTo(Math.max(0, currentPoint - 1))}>Previous</button>
+            <button className='text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={() => moveTo(Math.min(points.length - 1, currentPoint + 1))}>Next</button>
             {points.map((_, index) => (
-              <button key={index} onClick={() => moveTo(index)}>
+              <button className='text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' key={index} onClick={() => moveTo(index)}>
                 {`Go to ${_.year}`}
               </button>
             ))}

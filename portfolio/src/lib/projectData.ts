@@ -1,7 +1,7 @@
 export interface Project {
     id: string | number;
     title: string;
-    src: string | null;
+    src: string;
     alt: string;
     description: string;
     content: string;

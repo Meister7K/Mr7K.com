@@ -2,9 +2,11 @@
 
 const ContactPage = ()=>{
 
-    return(<div>
-    <p>Contact</p>
-    </div>)
+    return(
+    <div className="pt-20 text-center">
+        
+        <h2>contact</h2>
+        </div>)
 }
 
 export default ContactPage

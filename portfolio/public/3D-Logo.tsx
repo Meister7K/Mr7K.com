@@ -7,7 +7,7 @@ export default function Model(props:any) {
   const logoref = useRef()
 
   useFrame(() => {
-    logoref.current.rotation.z += 0.01;
+    logoref.current.rotation.z += 0.001;
   });
 
   // Assume the center of the model is at [1.268, 1.2435, -1.315]
