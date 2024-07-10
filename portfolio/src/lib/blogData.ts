@@ -13,7 +13,7 @@ export interface Blog {
 const blogs: Blog[] = [
     {
         id: 1,
-        title: "Blog 1",
+        title: "Coding Tips for Beginners",
         alt: "alt tag",
         description: "The first blog.",
         src: "/clouds-2.jpg",
@@ -24,7 +24,7 @@ const blogs: Blog[] = [
     },
     {
         id: 2,
-        title: "Blog 2",
+        title: "Roth vs. Traditional Retirement Accounts",
         description: "The second blog.",
         src: "/clouds-2.jpg",
         alt: "alt tag",
@@ -32,6 +32,17 @@ const blogs: Blog[] = [
         createdAt: "2023-09-28T22:08:01.121Z",
         category: "Finance",
         href: "blogs/2"
+    },
+    {
+        id: 3,
+        title: "401K vs. IRA",
+        description: "The second blog.",
+        src: "/clouds-2.jpg",
+        alt: "alt tag",
+        content: "this is the second blog I wrote. cool right?",
+        createdAt: "2023-09-28T22:08:01.121Z",
+        category: "Finance",
+        href: "blogs/3"
     }
 ];
 
