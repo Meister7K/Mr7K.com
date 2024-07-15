@@ -30,7 +30,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="h-full">
-      <body className={cn("relative h-full font-sans antialiased mb-10 bg-background", inter.className)}>
+      <body className={cn("relative h-full font-sans antialiased mb-10 bg-background  ", inter.className)}>
         <Suspense fallback={<Loading />}>
           <Intro/>
             <ThemeProvider

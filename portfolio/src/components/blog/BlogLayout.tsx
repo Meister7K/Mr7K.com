@@ -55,7 +55,7 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
       {/* Sidebar Navigation */}
       <div
       ref={sidebarRef}
-        className={`fixed left-0 top-0 transform transition-transform duration-300 h-full w-1/2 bg-radius rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-radius z-10 ${
+        className={`fixed left-0 top-0 transform transition-transform duration-300 h-full w-fit bg-radius rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-radius z-10 pl-10  ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } w-1/2 shadow-lg `}
       >
