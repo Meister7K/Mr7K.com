@@ -29,10 +29,10 @@ export default function Home() {
   return (
     
       <main className=" flex flex-col items-center justify-between w-full lg:px-8 box-border min-h-screen bg-background lg:mb-20">
-        <section className="title  flex flex-col justify-evenly align-middle relative w-full h-screen">
+        <section className="title flex flex-col justify-evenly align-middle relative w-full h-screen">
           <h1 className=" z-20 absolute top-5/6 w-full lg:text-9xl text-6xl text-center select-none pointer-events-none">Welcome</h1>
       
-          <Icon className="h-screen" />
+          <Icon className="h-screen w-screen" />
         </section>
         <section className="Hero-section min-h-screen flex flex-col justify-between">
           <HeroSection {...heroData} />

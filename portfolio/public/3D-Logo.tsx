@@ -5,7 +5,9 @@ import { useFrame } from '@react-three/fiber';
 export default function Model(props:any) {
   const { nodes, materials } = useGLTF('/3D-Logo.gltf')
   const logoref = useRef()
-
+ const [isHover, setIsHover]= useState(false)
+  const [active, setActive] = useState(false)
+  
   useFrame(() => {
     
 
@@ -16,7 +18,7 @@ export default function Model(props:any) {
     }
   });
 
-  const [isHover, setIsHover]= useState(false)
+ 
 
   
   // Assume the center of the model is at [1.268, 1.2435, -1.315]

@@ -60,10 +60,10 @@ const ProjectLayout: FC<ProjectLayoutProps> = ({ children }) => {
         } w-1/2 shadow-lg `}
       >
         <nav className="w-full p-4 h-full">
-          <ul className="flex w-full h-full flex-col justify-evenly align-middle box-border">
+          <ul className="flex w-full h-full flex-col justify-evenly align-middle box-border ">
             {projects.map((project: { id: Key; title: string }) => (
-              <li key={project.id} className="text-center h-fit my-2 w-full box-border">
-                <Link href={`/projects/${project.id}`} className="border">
+              <li key={project.id} className="text-center h-fit my-2 w-full box-border border p-2 m-2">
+                <Link href={`/projects/${project.id}`} className="">
                   {project.title}
                 </Link>
               </li>
