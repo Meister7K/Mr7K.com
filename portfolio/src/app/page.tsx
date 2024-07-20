@@ -11,10 +11,10 @@ import { motion } from "framer-motion";
 
 const heroData = {
   src: "/clouds-2.jpg",
-  title: "Hero Image",
+  title: "About 7K",
   description: "Hero Image Desc.",
   alt: "hero image",
-  href: "/projects",
+  href: "/about",
   width: 2000,
   height: 500
 };
@@ -26,18 +26,26 @@ const latestProject = getLatestProject();
 
 
 export default function Home() {
+
+
+
+
   return (
     
-      <main className=" flex flex-col items-center justify-between w-full lg:px-8 box-border min-h-screen bg-background lg:mb-20">
-        <section className="title flex flex-col justify-evenly align-middle relative w-full h-screen">
-          <h1 className=" z-20 absolute top-5/6 w-full lg:text-9xl text-6xl text-center select-none pointer-events-none">Welcome</h1>
+      <main className=" flex flex-col items-center justify-between w-full box-border min-h-screen bg-background lg:mb-20 relative">
+        <section className=" title flex flex-col justify-evenly align-middle  w-full h-screen sticky top-0 left-0" >
+          
       
           <Icon className="h-screen w-screen" />
         </section>
-        <section className="Hero-section min-h-screen flex flex-col justify-between">
+        <h1 className="absolute top-1/4 z-10 w-full lg:text-9xl text-6xl text-center select-none pointer-events-none">Welcome</h1>
+        <section id="next" className="Hero-section min-h-screen flex flex-col px-4 lg:px-8 justify-evenly bg-transparent backdrop-blur-sm ">
+          <h2 className="text-center ">Learn more about me</h2>
           <HeroSection {...heroData} />
-          <div className="secondary-section flex lg:flex-row flex-col m-2 justify-evenly box-border gap-2">
+          <h2 className="text-center">Explore my current work</h2>
+          <div className="secondary-section flex lg:flex-row flex-col m-2 justify-center box-border gap-2">
             {/* !Secondary component list */}
+            
             <SecondarySection
               src={latestBlog.src}
               title={latestBlog.title}

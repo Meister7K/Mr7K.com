@@ -22,16 +22,16 @@ const NavLinks = () => {
   };
 
   return (
-    <div className="flex flex-row justify-evenly flex-wrap">
+    <div className="flex flex-row justify-evenly flex-wrap box-border">
       {LinkList.map((link, i) => (
         <Link 
           key={i} 
           href={link.href} 
           className={cn(
-            "p-2 m-2 transition-colors duration-200 rounded-sm",
+            "p-2 m-2 transition-colors duration-200 rounded-sm box-border",
             isActive(link.href) 
-              ? "bg-primary text-primary-foreground" 
-              : "hover:bg-secondary"
+              ? "bg-background text-primary border" 
+              : "hover:bg-muted-foreground"
           )}
         >
           {link.name}

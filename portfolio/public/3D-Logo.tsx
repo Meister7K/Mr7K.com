@@ -12,7 +12,7 @@ export default function Model(props:any) {
     
 
     if(isHover){
-      logoref.current.rotation.z += 0;
+      logoref.current.rotation.z += 0.002;
     }else{
       logoref.current.rotation.z += 0.001;
     }
@@ -23,12 +23,12 @@ export default function Model(props:any) {
   
   // Assume the center of the model is at [1.268, 1.2435, -1.315]
   // (This is half of [2.536, 2.487, -2.63])
-  const centerX = 8.268;
+  const centerX = 8.168;
   const centerY = 1.2435;
   const centerZ = -1.315;
 
   return (
-    <group ref={logoref} {...props} dispose={null} position={[0,0,0]} rotation-x={1.6} onPointerEnter={(e: { stopPropagation: () => any; })=>(e.stopPropagation(), setIsHover(true))} onPointerLeave={()=>setIsHover(false)} color={isHover ? "red" : null}>
+    <group ref={logoref} {...props} dispose={null} position={[0,0,0]} rotation-x={1.6} onPointerEnter={(e: { stopPropagation: () => any; })=>(e.stopPropagation(), setIsHover(true))} onPointerLeave={()=>setIsHover(false)} color={isHover ? "red" : null} castShadow >
       <group position={[-centerX, -centerY, -centerZ]}>
         <mesh 
           geometry={nodes['7-L'].geometry} 

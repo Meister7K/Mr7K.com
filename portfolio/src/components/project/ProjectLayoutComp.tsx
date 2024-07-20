@@ -55,15 +55,15 @@ const ProjectLayout: FC<ProjectLayoutProps> = ({ children }) => {
       {/* Sidebar Navigation */}
       <div
       ref={sidebarRef}
-        className={`fixed left-0 top-0 transform transition-transform duration-300 h-full w-fit bg-radius rounded-md bg-clip-padding backdrop-filter pl-10 backdrop-blur-sm bg-opacity-20 border border-radius z-10 ${
+        className={`fixed left-0 top-0 transform transition-transform duration-300 h-full w-fit  rounded-md bg-clip-padding backdrop-filter pl-10 backdrop-blur-sm bg-card/10 border border-radius z-10 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } w-1/2 shadow-lg `}
       >
         <nav className="w-full p-4 h-full">
           <ul className="flex w-full h-full flex-col justify-evenly align-middle box-border ">
             {projects.map((project: { id: Key; title: string }) => (
-              <li key={project.id} className="text-center h-fit my-2 w-full box-border border p-2 m-2">
-                <Link href={`/projects/${project.id}`} className="">
+              <li key={project.id} className="text-center h-fit my-2 w-full box-border border m-2">
+                <Link href={`/projects/${project.id}`} className="block p-2 hover:bg-background/50 transition-all duration-500">
                   {project.title}
                 </Link>
               </li>

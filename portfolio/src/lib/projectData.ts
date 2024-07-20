@@ -42,8 +42,8 @@ const projects: Project[] = [
         src: "/clouds-2.jpg", 
         alt:"alt tag",
         content: "Learning mesh rendering, camera positioning, and animations with Three js.",
-        link: "https://meister7k.github.io/ThreeJSTSPractice/",
-    github: "https://github.com/Meister7K/ThreeJSTSPractice",
+        link: "https://meister7k.github.io/super-lamp/",
+    github: "https://github.com/Meister7K/super-lamp",
         href: "projects/3",
         
      }

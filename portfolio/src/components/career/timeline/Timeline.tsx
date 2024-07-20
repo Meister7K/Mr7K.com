@@ -6,11 +6,11 @@ import { OrbitControls } from '@react-three/drei';
 import { Text } from '@react-three/drei'; // Correct import statement for Text component
 
 const points = [
-  { year: 1994, description: 'Text for 1994 here', position: new THREE.Vector3(0, 0, 0) },
-  { year: 2013, description: 'Text for 2013 here', position: new THREE.Vector3(5, 0, 0) },
-  { year: 2018, description: 'Text for 2018 here', position: new THREE.Vector3(10, 0, 0) },
-  { year: 2020, description: 'Text for 2020 here', position: new THREE.Vector3(15, 0, 0) },
-  { year: 2024, description: 'Text for 2024 here', position: new THREE.Vector3(20, 0, 0) },
+  { year: 2017, description: 'Graduated from the University of Minnesota Duluth with an undergraduate degree in Criminology.\n Worked as a bartender and bouncer throughout college.', position: new THREE.Vector3(0, 0, 0) },
+  { year: 2018, description: 'Began working at LSC as a Cathodic Protection Technician Lead.', position: new THREE.Vector3(5, 0, 0) },
+  { year: 2019, description: 'Promoted to Project Coordinator.', position: new THREE.Vector3(10, 0, 0) },
+  { year: 2022, description: `Transitioned into Tech while attending \nthe University of Austin Texas' Web Development Program.`, position: new THREE.Vector3(15, 0, 0) },
+  { year: 2023, description: 'Began working as a Web Developer at MXS Solutions.', position: new THREE.Vector3(20, 0, 0) },
 ];
 
 const CameraControls = ({ targetPosition, lookAtTarget }: { targetPosition: THREE.Vector3; lookAtTarget: THREE.Vector3 }) => {
@@ -27,7 +27,7 @@ const CameraControls = ({ targetPosition, lookAtTarget }: { targetPosition: THRE
 const Timeline = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [currentPoint, setCurrentPoint] = useState(0);
-  const [targetPosition, setTargetPosition] = useState(new THREE.Vector3(10, 10, 10));
+  const [targetPosition, setTargetPosition] = useState(new THREE.Vector3(10, 0, 15));
   const [lookAtTarget, setLookAtTarget] = useState(points[2].position);
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
 
@@ -38,7 +38,7 @@ const Timeline = () => {
   };
 
   const resetCamera = () => {
-    setTargetPosition(new THREE.Vector3(10, 10, 10));
+    setTargetPosition(new THREE.Vector3(10, 0, 15));
     setLookAtTarget(new THREE.Vector3(10, 0, 0)); // Reset to center of the timeline
     setCurrentPoint(0);
   };
@@ -49,7 +49,7 @@ const Timeline = () => {
 
   return (
     <>
-      <button onClick={toggleVisibility} className='rounded-sm text-primary absolute z-30 p-2 m-10 bottom-0 left-0 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all'>
+      <button onClick={toggleVisibility} className='rounded-sm text-primary absolute z-30 p-2 m-5 bottom-0 left-0 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all'>
         {isVisible ? 'Hide' : 'Show'}
       </button>
       {isVisible && (
@@ -66,13 +66,13 @@ const Timeline = () => {
                   onPointerOut={() => setHoveredPoint(null)}
                 >
                   <sphereGeometry args={[0.2, 32, 32]} />
-                  <meshStandardMaterial color={hoveredPoint === index ? 'green' : 'red'} />
+                  <meshStandardMaterial color={hoveredPoint === index ? 'gold' : 'red'} />
                 </mesh>
                 {hoveredPoint === index && (
                   <Text
                     position={[0, 0.5, 0]} // Adjust text position above the point
                     rotation={[0, 0, 0]}
-                    fontSize={0.2}
+                    fontSize={0.3}
                     color="gray"
                     anchorX="center"
                     anchorY="middle"
@@ -84,7 +84,7 @@ const Timeline = () => {
                 <Text
                   position={[0, -0.5, 0]} // Adjust text position below the point
                   rotation={[0, 0, 0]}
-                  fontSize={0.2}
+                  fontSize={0.5}
                   color="gray"
                   anchorX="center"
                   anchorY="middle"
@@ -94,7 +94,7 @@ const Timeline = () => {
               </group>
             ))}
           </Canvas>
-          <div className='absolute z-20 right-0 bottom-0 p-10 m-2 text-primary bg-background'>
+          <div className='absolute z-20 right-0 bottom-0 p-10 m-2 text-primary bg-transparent'>
             <button className='rounded-sm text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={resetCamera}>Reset Camera</button>
             <button className='rounded-sm text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={() => moveTo(Math.max(0, currentPoint - 1))}>Previous</button>
             <button className='rounded-sm text-primary p-2 m-2 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all' onClick={() => moveTo(Math.min(points.length - 1, currentPoint + 1))}>Next</button>
