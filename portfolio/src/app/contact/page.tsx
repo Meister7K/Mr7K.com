@@ -46,7 +46,7 @@ const ContactPage = ()=>{
         },
          {"icon": (<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  viewBox="0 0 48 48">
             <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
-            </svg>) , "href":"https://www.instagram.com/mr_7k_?"},
+            </svg>) , "href":"https://www.instagram.com/mr_7k_/"},
         // {"icon": , "href":""},
         // {"icon": , "href":""},
         // {"icon": , "href":""},
@@ -54,15 +54,15 @@ const ContactPage = ()=>{
 
     return(
     <div className="pt-20 text-center lg:mb-20 bg-background min-h-screen px-4">
-        
+       <div className="mx-auto max-w-screen-xl"> 
         <h2 className="text-4xl mb-5">Contact</h2>
-        <div className="contact-form w-full flex flex-col justify-evenly align-baseline">
+        <div className="contact-form w-full flex flex-col justify-evenly align-baseline ">
       
         <h3>Lets get in touch!</h3>
         <p className="text-sm text-ring">Have a plan for a webpage or need help with conceptualizing an idea?</p>
         <p className="text-sm text-ring"> I am open to freelance work and supporting projects.</p>
         {/* <form ref={form} onSubmit={sendEmail}> */}
-          <ul className="p-10 border border-card-foreground mx-auto m-10 rounded-sm w-full max-w-screen-md">
+          <ul className=" p-10 border border-card-foreground mx-auto m-10 rounded-sm w-full max-w-screen-md">
             <li >
               <input className="p-1 border border-card-foreground mx-auto m-1 rounded-sm w-full" placeholder="Name" type="text" name="name" required />
             </li>
@@ -88,13 +88,13 @@ const ContactPage = ()=>{
               ></textarea>
             </li>
             <li>
-              <input className="input-btn p-1 border border-card-foreground mx-auto m-2 rounded-sm w-full" type="submit"  value="Send" />
+              <input className="input-btn p-1 border border-card-foreground mx-auto m-2 rounded-sm w-full hover:shadow-md hover:shadow-primary shad  active:shadow-inner active:shadow-primary transition-all duration-200" type="submit"  value="Send" />
             </li>
           </ul>
         {/* </form> */}
       </div>
         <h3>Or connect with me here</h3>
-        <ul className="flex flex-row justify-evenly gap-4 ">
+        <ul className="flex flex-row justify-evenly gap-4 mx-auto mt-5 w-full max-w-screen-md">
           {socialLinks.map((link, index) => (
             <li key={index} className="max-w-48 w-full " >
               
@@ -102,7 +102,8 @@ const ContactPage = ()=>{
               
             </li>
           ))}</ul>
-        </div>)
+        </div></div>)
+        
 }
 
 export default ContactPage

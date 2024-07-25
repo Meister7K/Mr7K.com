@@ -13,12 +13,18 @@ export interface Blog {
 const blogs: Blog[] = [
     {
         id: 1,
-        title: "Coding Tips for Beginners",
+        title: "5 Coding Tips for Beginners",
         alt: "alt tag",
         description: "The first blog.",
         src: "/clouds-2.jpg",
-        content: "this is the first blog I wrote. cool right?",
-        createdAt: "2023-09-28T22:08:01.121Z",
+        content: `Tip # 1: Consistency is Key\n
+        This is more of a uniform rule than a tip. Creating a schedule to take time to learn and practice a new skill is imperative to mastering anything. Set up a time every day or weekly (depending on your intensity and availability) dedicated solely to working on your new skill. Attempt to make the time of day consistent in order to better solidify the habit and help your brain solidify the pattern.\n 
+        Tip # 2: TimeBlock\n
+        This is a solid scheduling technique to mage your time wisely. Set up a chunk of time ex. from 3:00- 4:00pm to work on coding. It's also beneficial to schedule out your entire day in this format.\n
+        Tip # 3: Master the Fundamentals\n
+
+        `,
+        createdAt: "2024-07-24T22:08:01.121Z",
         category: "Coding",
         href: "blogs/1"
     },
@@ -28,7 +34,7 @@ const blogs: Blog[] = [
         description: "The second blog.",
         src: "/clouds-2.jpg",
         alt: "alt tag",
-        content: "this is the second blog I wrote. cool right?",
+        content: `this is the second blog I wrote. cool right?`,
         createdAt: "2023-09-28T22:08:01.121Z",
         category: "Finance",
         href: "blogs/2"
@@ -39,7 +45,7 @@ const blogs: Blog[] = [
         description: "The second blog.",
         src: "/clouds-2.jpg",
         alt: "alt tag",
-        content: "this is the second blog I wrote. cool right?",
+        content: `this is the second blog I wrote. cool right?`,
         createdAt: "2023-09-28T22:08:01.121Z",
         category: "Finance",
         href: "blogs/3"

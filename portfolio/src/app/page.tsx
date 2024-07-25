@@ -38,31 +38,43 @@ export default function Home() {
       
           <Icon className="h-screen w-screen" />
         </section>
-        <h1 className="absolute top-1/4 z-10 w-full lg:text-9xl text-6xl text-center select-none pointer-events-none">Welcome</h1>
-        <section id="next" className="Hero-section min-h-screen flex flex-col px-4 lg:px-8 justify-evenly bg-transparent backdrop-blur-sm ">
-          <h2 className="text-center ">Learn more about me</h2>
+        <h1 className="absolute top-1/4 z-10 w-full lg:text-8xl text-6xl text-center select-none pointer-events-none">Welcome Stranger</h1>
+        <section id="next" className="Hero-section mx-auto max-w-screen-xl min-h-screen flex flex-col px-4 lg:px-8 justify-evenly bg-transparent backdrop-blur-sm ">
+          <div>
+            <h2 className="text-center text-xl lg:text-4xl my-2 ">Learn more about me</h2>
           <HeroSection {...heroData} />
-          <h2 className="text-center">Explore my current work</h2>
+          </div>
+          <h2 className="text-center lg:text-4xl text-xl">Explore my current work</h2>
+          <div>
+             
           <div className="secondary-section flex lg:flex-row flex-col m-2 justify-center box-border gap-2">
             {/* !Secondary component list */}
-            
+            <div className="w-full">
+              <h3 className="text-center" >Blogs</h3>
             <SecondarySection
               src={latestBlog.src}
               title={latestBlog.title}
               description={latestBlog.description}
               alt={latestBlog.alt}
               href={latestBlog.href}
-              width={2000}
+              width={1300}
               height={500}
             />
+            </div>
+            <div className="w-full">
+              <h3 className="text-center">Projects</h3>
             <SecondarySection
               src={latestProject.src}
               title={latestProject.title}
               description={latestProject.description}
               alt={latestProject.alt}
               href={latestProject.href}
-              width={2000}
+              width={1300}
               height={500} />
+            </div>
+          </div>
+         
+            
 
           </div>
         </section>

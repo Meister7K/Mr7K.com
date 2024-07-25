@@ -10,10 +10,13 @@ import { cn } from "@/lib/utils";
 import Intro from "@/components/loading/Intro";
 import PageTransition from "@/components/loading/PageTransition";
 import Footer from "@/components/footer/Footer";
-
-
-
-const inter = Inter({ subsets: ["latin"] });
+import { Josefin_Sans } from 'next/font/google'
+ 
+const Josefin = Josefin_Sans({
+  weight: '700',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Mr. 7K Personal Portfolio",
@@ -30,7 +33,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="h-full">
-      <body className={cn("relative h-full font-sans antialiased mb-10 bg-background  ", inter.className)}>
+      <body className={cn("relative h-full font-sans antialiased mb-10 bg-background  ", Josefin.className)}>
         <Suspense fallback={<Loading />}>
           <Intro/>
             <ThemeProvider

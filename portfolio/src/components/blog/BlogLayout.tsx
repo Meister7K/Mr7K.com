@@ -61,11 +61,13 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
       >
         <nav className="w-full p-4 h-full">
           <ul className="flex h-full flex-col justify-evenly align-middle">
-            {blogs.map((blog: { id: Key; title: string }) => (
+            {blogs.map((blog: { id: Key; title: string; }) => (
               <li key={blog.id} className="text-center h-fit m-2 w-full border">
                 <Link href={`/blogs/${blog.id}`} className="block p-2 hover:bg-background/80 transition-all duration-500">
                   {blog.title}
+
                 </Link>
+            
               </li>
             ))}
           </ul>
