@@ -28,7 +28,18 @@ const latestProject = getLatestProject();
 export default function Home() {
 
 
-
+const title={
+  hidden: { opacity: 0, y:+100 },
+  show: {
+    opacity: 1,
+    y:0,
+    transition: {
+      ease:"linear",
+      duration:1,
+      delay: .5
+    }
+  }
+}
 
   return (
     
@@ -38,13 +49,19 @@ export default function Home() {
       
           <Icon className="h-screen w-screen" />
         </section>
-        <h1 className="absolute top-1/4 z-10 w-full lg:text-8xl text-6xl text-center select-none pointer-events-none">Welcome Stranger</h1>
+        <motion.h1 
+        variants={title}
+        initial="hidden"
+        animate="show"
+        className="absolute top-1/4 z-10 w-full lg:text-8xl text-6xl text-center select-none pointer-events-none">Welcome Stranger</motion.h1>
         <section id="next" className="Hero-section mx-auto max-w-screen-xl min-h-screen flex flex-col px-4 lg:px-8 justify-evenly bg-transparent backdrop-blur-sm ">
           <div>
             <h2 className="text-center text-xl lg:text-4xl my-2 ">Learn more about me</h2>
           <HeroSection {...heroData} />
           </div>
-          <h2 className="text-center lg:text-4xl text-xl">Explore my current work</h2>
+          <h2 
+          
+          className="text-center lg:text-4xl text-xl">Explore my current work</h2>
           <div>
              
           <div className="secondary-section flex lg:flex-row flex-col m-2 justify-center box-border gap-2">

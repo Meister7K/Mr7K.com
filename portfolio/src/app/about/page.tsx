@@ -1,6 +1,6 @@
 import { ArrowBigRight, ChevronRight } from "lucide-react"
 import Link from "next/link"
-
+import Image from "next/image"
 
 const AboutPage = ()=>{
 
@@ -10,6 +10,7 @@ const AboutPage = ()=>{
     
     <div>
         {/* image with gameboy theme */} 
+        <Image className="mx-auto rounded-full w-96" alt="me" src="/IMG_0959.JPG" width={1300} height={1000}/>
     </div>
 
     <p> I&apos;m Karl, a full stack web developer currently working remotely in Denver, CO. 7K is my shorthand tag created by combining the first letter of my name and the last letter of my favorite number. <span title="it&apos;s 17">Can you guess what it is?</span></p>
