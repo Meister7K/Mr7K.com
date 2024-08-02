@@ -18,7 +18,7 @@ const Icon = (_props: any) => {
         <Canvas className='h-full w-full bg-background' shadows>
             
             <PerspectiveCamera makeDefault fov={50} position={[0,5,30]}/>
-            <spotLight
+            {/* <spotLight
         color={[1, 1, 0.3]}
         intensity={5000}
         angle={0.8}
@@ -27,13 +27,23 @@ const Icon = (_props: any) => {
         castShadow
         shadow-bias={-0.0001}
         scale={100}
-      />
+      /> */}
      
-            {/* <ambientLight intensity={.5} color={[1,0.2,.3]} /> */}
+     <rectAreaLight
+      width={2}
+      height={2}
+      intensity={5000}
+      color={'white'}
+      position={[0, 10, 10]}
+      rotation={[0, 180, 0]}
+    //   castShadow
+    />
+
+<Environment preset="city" />
 
 
-             <Model position={[0, 0, 0]}/>
-{/* <Ground/> */}
+             <Model position={[0, 0, 0]} />
+
             {/* <OrbitControls target={[0,5,0]} /> */}
             {/* <Environment preset="forest" background backgroundBlurriness={0.5} /> */}
         </Canvas>

@@ -1,12 +1,41 @@
 import React, { useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
+import { MeshTransmissionMaterial } from "@react-three/drei";
+import { useControls } from 'leva'
+import { roughness, thickness, transmission } from 'three/examples/jsm/nodes/core/PropertyNode.js';
 
 export default function Model(props:any) {
   const { nodes, materials } = useGLTF('/3D-Logo.gltf')
   const logoref = useRef()
+  const lightref = useRef()
  const [isHover, setIsHover]= useState(false)
   const [active, setActive] = useState(false)
+
+//   const testMaterialProps = useControls({
+
+//     thickness: { value: 0.2, min: 0, max: 3, step: 0.05 },
+
+//     roughness: { value: 0, min: 0, max: 1, step: 0.1 },
+
+//     transmission: {value: 1, min: 0, max: 1, step: 0.1},
+
+//     ior: { value: 1.2, min: 0, max: 3, step: 0.1 },
+
+//     chromaticAberration: { value: 0.02, min: 0, max: 1},
+
+//     backside: { value: true},
+
+// })
+
+const materialProps={
+  thickness:3,
+  roughness: 0.07,
+  transmission: 1,
+  ior: 3,
+  chromaticAberration: 1,
+  backside:true
+}
   
   useFrame(() => {
     
@@ -32,10 +61,10 @@ export default function Model(props:any) {
       <group position={[-centerX, -centerY, -centerZ]}>
         <mesh 
           geometry={nodes['7-L'].geometry} 
-          material={materials.Glass} 
+          
           position={[0, 0, 0]}
           
-        />
+        ><MeshTransmissionMaterial {...materialProps}/></mesh>
       </group>
     </group>
   )

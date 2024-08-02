@@ -50,11 +50,11 @@ const Timeline = () => {
   return (
     <>
       <button onClick={toggleVisibility} className='rounded-sm text-primary absolute z-30 p-2 m-5 bottom-0 left-0 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all'>
-        {isVisible ? 'Hide' : 'Show'}
+        {isVisible ? 'Hide' : 'Timeline'}
       </button>
       {isVisible && (
         <div className="absolute top-0 left-0 w-full h-full box-border flex justify-center align-middle">
-          <Canvas className="h-full bg-background w-full top-0 left-0" shadows>
+          <Canvas className="z-10 h-full bg-background w-full top-0 left-0" shadows>
             <CameraControls targetPosition={targetPosition} lookAtTarget={lookAtTarget} />
             <OrbitControls />
             <ambientLight />
@@ -70,7 +70,7 @@ const Timeline = () => {
                 </mesh>
                 {hoveredPoint === index && (
                   <Text
-                    position={[0, 0.5, 0]} // Adjust text position above the point
+                    position={[0, 2, 0]} // Adjust text position above the point
                     rotation={[0, 0, 0]}
                     fontSize={0.3}
                     color="gray"
