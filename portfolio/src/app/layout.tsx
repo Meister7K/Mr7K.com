@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -28,29 +27,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-
-
   return (
-    <html lang="en" className="h-full">
-      <body className={cn("relative h-full font-sans antialiased mb-10 bg-background  ", Josefin.className)}>
-        <Suspense fallback={<Loading />}>
-          <Intro/>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <Navbar />
-              <PageTransition>{children}</PageTransition>
-              {/* Footer */}
-              
-            </ThemeProvider>
-          
-        </Suspense>
+    <html lang="en" className="h-full" suppressHydrationWarning>
+      <body className={cn("relative h-full font-sans antialiased bg-background", Josefin.className)}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Suspense fallback={<Loading />}>
+            <Intro/>
+            <Navbar />
+            <PageTransition>{children}</PageTransition>
+            {/* Footer */}
+          </Suspense>
+        </ThemeProvider>
       </body>
-      
     </html>
   );
 }

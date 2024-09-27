@@ -25,7 +25,7 @@ const CameraControls = ({ targetPosition, lookAtTarget }: { targetPosition: THRE
 };
 
 const Timeline = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [currentPoint, setCurrentPoint] = useState(0);
   const [targetPosition, setTargetPosition] = useState(new THREE.Vector3(10, 0, 15));
   const [lookAtTarget, setLookAtTarget] = useState(points[2].position);
@@ -48,12 +48,12 @@ const Timeline = () => {
   };
 
   return (
-    <>
-      <button onClick={toggleVisibility} className='rounded-sm text-primary absolute z-30 p-2 m-5 bottom-0 left-0 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all'>
+    <div className='relative'>
+      <button onClick={toggleVisibility} className='rounded-sm text-primary fixed z-50 p-2 m-5 bottom-0 left-0 bg-muted-foreground border-solid border-primary hover:bg-destructive transition-all'>
         {isVisible ? 'Hide' : 'Timeline'}
       </button>
       {isVisible && (
-        <div className="absolute top-0 left-0 w-full h-full box-border flex justify-center align-middle">
+        <div className="fixed bottom-0 left-0 w-full h-svh box-border flex justify-center align-middle">
           <Canvas className="z-10 h-full bg-background w-full top-0 left-0" shadows>
             <CameraControls targetPosition={targetPosition} lookAtTarget={lookAtTarget} />
             <OrbitControls />
@@ -106,7 +106,7 @@ const Timeline = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

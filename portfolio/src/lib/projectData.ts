@@ -15,7 +15,7 @@ const projects: Project[] = [
     { 
         id: 1, 
         title: "React Portfolio 1.0", 
-        description: "My first rendition of my portfolio.", 
+        description: "The first rendition of my portfolio.", 
         src: "/clouds-2.jpg", 
         alt:"alt tag",
         content: "This Project was made using React, Three js, SCSS, and Typescript. I learned the basics of react components, hooks, and state management. I also learned about 3D rendering, animations, and physics with Three js.",
@@ -45,6 +45,16 @@ const projects: Project[] = [
         link: "https://meister7k.github.io/super-lamp/",
     github: "https://github.com/Meister7K/super-lamp",
         href: "projects/3",
+        
+     },  { id: 4, 
+        title: "Sleeper Fantasy Football App", 
+        description: "An app using the Sleeper API for fantasy football data.", 
+        src: "/clouds-2.jpg", 
+        alt:"alt tag",
+        content: "It started as a simple app to record the history of my Fantasy Football League, But after learning about the features of the Sleeper API, it evolved into an history and league content site that anyone with a sleeper league can use. Please feel free to share with your friends if you have a league.",
+        link: "https://fpl-uhv2.vercel.app/",
+    github: "https://github.com/Meister7K/super-lamp",
+        href: "projects/4",
         
      }
 ];

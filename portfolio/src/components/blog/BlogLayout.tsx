@@ -41,42 +41,45 @@ const BlogLayout: FC<BlogLayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative box-border">
-      {/* Chevron Icon for toggling the sidebar */}
-      <div
+    <div className=" bg-background min-h-screen h-full box-border">
+      {/* Chevron Icon for toggling the sidebar */}<main className={`relative top-0 left-0 w-full p-6 box-border transition-all duration-300 ${isSidebarOpen ? 'ml-1/2' : ''} flex-1`}>
+        {children}
+      </main>
+      
+      {/* Sidebar Navigation */}
+      <div className='absolute h-full top-0 left-0 w-0 box-border'>
+        <div className='relative h-full w-0'>
+        <div
        ref={chevronRef}
-        className={`sticky z-20 top-1/2 left-0 transform transition-transform duration-300 cursor-pointer w-fit ${
+        className={`sticky left-0 top-1/2 z-20 transform transition-transform duration-300 cursor-pointer w-fit ${
           isSidebarOpen ? 'rotate-180' : ''
         }`}
         onClick={toggleSidebar}
       >
         <ChevronRight />
       </div>
-      {/* Sidebar Navigation */}
       <div
       ref={sidebarRef}
-        className={`fixed left-0 top-0 transform transition-transform duration-300 h-full w-fit bg-radius rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-radius z-10 pl-10  ${
+        className={`sticky left-0 top-0 transform transition-transform duration-300 h-screen w-screen max-w-screen-md rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-card/10 box-border border border-radius z-10 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } w-1/2 shadow-lg `}
       >
-        <nav className="w-full p-4 h-full">
-          <ul className="flex h-full flex-col justify-evenly align-middle">
-            {blogs.map((blog: { id: Key; title: string; }) => (
-              <li key={blog.id} className="text-center h-fit m-2 w-full border">
-                <Link href={`/blogs/${blog.id}`} className="block p-2 hover:bg-background/80 transition-all duration-500">
-                  {blog.title}
-
+        <nav className=" w-full h-full box-border">
+          <ul className="flex w-full h-full flex-col justify-evenly align-middle box-border max-w-screen-md">
+            {blogs.map((project: { id: Key; title: string }) => (
+              <li key={project.id} className="text-center h-fit box-border my-2 w-full max-w-96 mx-auto">
+                <Link href={`/blogs/${project.id}`} className="block p-2 hover:bg-background/50 transition-all duration-500 border">
+                  {project.title}
                 </Link>
-            
               </li>
             ))}
           </ul>
         </nav>
       </div>
+      </div>
+      </div>
       {/* Main Content Area */}
-      <main className={`mt-9 transition-all duration-300 ${isSidebarOpen ? 'ml-1/2' : ''} flex-1 box-border`}>
-        {children}
-      </main>
+      
     </div>
   );
 };

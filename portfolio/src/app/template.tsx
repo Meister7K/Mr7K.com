@@ -30,7 +30,8 @@ const PageTransition = ({ children }: { children: ReactNode }) => {
         
       >
         <ProgressBar/>
-        {children}<Footer/>
+        {children}
+        <Footer/>
       </motion.div>
     </>
   )

@@ -73,8 +73,8 @@ const CareerPage = ()=>{
         <div className="mx-auto max-w-screen-xl py-10">
            <h2 className="mt-20 text-4xl text-center mb-10">My Extended Work History</h2> 
            {workArr.map((job, index) => (
-            <>
-              <li className=" list-none" key={index}>
+            
+              <li className=" list-none mb-4" key={index}>
                 <div className="li-top">
                   <h3 className="title text-2xl">{job.title}</h3>
                   <h3 className="years">{job.years}</h3>
@@ -95,8 +95,7 @@ const CareerPage = ()=>{
                   ))}
                 </ul>
               </details>):""}</li>
-              <br />
-            </>
+              
           ))}
         </div>
    

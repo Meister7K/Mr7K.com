@@ -6,7 +6,7 @@ import NavLinks from "./NavLinks"
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollDirection } from "@/hooks/useScrollDirections"
-import {AlignJustify, ChevronDown, ChevronUp, X} from "lucide-react"
+import {AlignJustify, ChevronDown, X} from "lucide-react"
 import { usePathname } from "next/navigation"
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
     useEffect(() => {
         setIsVisible(true);
         setIsOpen(false);
-    }, [pathname]); // Reset state when route changes
+    }, [pathname]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
             }
         };
 
-        handleScroll(); // Call once to set initial state
+        handleScroll();
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [scrollDirection]);
@@ -61,12 +61,12 @@ const Navbar = () => {
         <>
             <motion.div
                 ref={navRef}
-                initial={{ y: -80 }}
-                animate={{ y: isVisible || isOpen ? 0 : -80 }}
+                initial={{ y: -70 }}
+                animate={{ y: isVisible || isOpen ? 0 : -70 }}
                 transition={{ duration: 0.3 }}
-                className="fixed top-0 z-50 content-center"
+                className="fixed top-0 z-50 w-full"
             >
-                <nav className="flex flex-row justify-between px-8 items-center w-full box-border flex-wrap backdrop-blur-md bg-primary/5 border-b-2 transf">
+                <nav className="flex flex-row justify-between px-8 items-center w-full box-border flex-wrap backdrop-blur-md bg-primary/5 border-b-2">
                     <Link href="/" className="block"><Logo /></Link>
                     <div className="md:hidden">
                         <button onClick={toggleNavbar}>
@@ -78,21 +78,17 @@ const Navbar = () => {
                         <ModeToggle />
                     </div>
                 </nav>
-                <div className="w-screen flex items-center justify-center mt-6">
+                <div className="w-full flex items-center justify-center mt-2">
                     <button 
-                onClick={toggleVisibility}
-                className='absolute z-50 hover:bg-primary/10 transition duration-200 place-self-center rounded-sm'
-            >
-                 <ChevronDown className={`transform transition-transform duration-300 ${
-                    isVisible ? 'rotate-180' : ''
-                  }`} />
-            </button>
+                        onClick={toggleVisibility}
+                        className='absolute z-50 hover:bg-primary/10 transition duration-200 place-self-center rounded-sm p-1'
+                    >
+                        <ChevronDown className={`transform transition-transform duration-300 ${
+                            isVisible ? 'rotate-180' : ''
+                        }`} />
+                    </button>
                 </div>
-                
             </motion.div>
-            
-            
-            
         </>
     )
 }
