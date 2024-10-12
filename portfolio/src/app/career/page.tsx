@@ -102,7 +102,7 @@ const CareerPage = ()=>{
     
     {/* Skills */}
      {/* timeline */}
-     <Timeline  />
+     {/* <Timeline  /> */}
      {/* Resume */}
     </div>)
 }

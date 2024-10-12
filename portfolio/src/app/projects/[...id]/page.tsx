@@ -27,7 +27,7 @@ const projectPost =  ({ params }: projectPostProps) => {
       {project.src ? <Image className='rounded-sm' alt={project.alt} src={project.src} width={1300} height={500} /> : null}
       </div>
       
-      <p className="my-4">{project.content}</p>
+      <p className="my-4 whitespace-pre-wrap">{project.content}</p>
       <Link className='p-2 m-2 transition-colors duration-200 rounded-sm bg-secondary hover:bg-destructive' href={project.link}>Link</Link>
       <Link className='p-2 m-2 transition-colors duration-200 rounded-sm bg-secondary hover:bg-destructive' href={project.github}>Repo</Link>
       </div>

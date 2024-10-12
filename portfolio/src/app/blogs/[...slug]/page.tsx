@@ -26,7 +26,7 @@ const BlogPost =  ({ params }: BlogPostProps) => {
       {blog.src ? <Image className='rounded-sm' alt="blog image" src={blog.src} width={1300} height={500} /> : null}
       </div>
       
-      <p className="mt-4">{blog.content}</p>
+      <p className="mt-4 whitespace-pre-wrap">{blog.content}</p>
       <span className='date p-2 text-sm text-muted-foreground'> Written on: {format(new Date(blog.createdAt),"MMM dd, yyy")}</span>
       </div>
     
