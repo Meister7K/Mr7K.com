@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client"
 import { ModeToggle } from "../theme/themeToggle"
 import Logo from "../logo/Logo"

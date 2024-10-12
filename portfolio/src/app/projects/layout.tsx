@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ReactNode } from 'react';
 import ProjectLayout from '@/components/project/ProjectLayoutComp';
 

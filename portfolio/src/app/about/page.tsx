@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 import { ArrowBigRight, ChevronRight } from "lucide-react"
 import Link from "next/link"

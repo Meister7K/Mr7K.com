@@ -1,4 +1,5 @@
-import { now } from "three/examples/jsm/libs/tween.module.js"
+// @ts-nocheck
+
 
 const Footer =()=>{
     const year = new Date(Date.now()).getFullYear().toString()

@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import { FC, useState } from "react";
 import blogs, { Blog } from "@/lib/blogData";

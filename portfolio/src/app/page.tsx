@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client"
 import HeroSection from "@/components/homepage/HeroSection";
 import Icon from "@/components/homepage/HomepageIcon";

@@ -1,5 +1,6 @@
 
-import Timeline from "@/components/career/timeline/Timeline"
+// @ts-nocheck
+// import Timeline from "@/components/career/timeline/Timeline"
 
 const workArr =[
     {

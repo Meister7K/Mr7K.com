@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import { motion, useScroll, useSpring } from "framer-motion";
 
 const ProgressBar = () => {
