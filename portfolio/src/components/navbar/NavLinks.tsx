@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 
 const LinkList = [
   {name:"Projects", href:"/projects"},
+  {name:"Tools", href:"/tools"},
   {name:"Blog", href:"/blogs"},
   {name:"About", href:"/about"},
   {name:"Career", href:"/career"},
