@@ -14,7 +14,8 @@ import {
   Filler,
   Legend,
   ChartOptions,
-  ChartData
+  ChartData,
+  LineController
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 
@@ -23,6 +24,7 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
+  LineController,
   Title,
   Tooltip,
   Filler,

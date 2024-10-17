@@ -1,4 +1,4 @@
-
+'use client'
 import InvestmentCalculator from "@/components/charts/finance/InvestmentCalc"
 
 const ToolPage =()=>{
