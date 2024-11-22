@@ -53,7 +53,7 @@ const projects: Project[] = [
         alt:"alt tag",
         content: "It started as a simple app to record the history of my Fantasy Football League, But after learning about the features of the Sleeper API, it evolved into an history and league content site that anyone with a sleeper league can use. Please feel free to share with your friends if you have a league.",
         link: "https://fpl-uhv2.vercel.app/",
-    github: "https://github.com/Meister7K/super-lamp",
+    github: "https://github.com/Meister7K/FPL",
         href: "projects/4",
         
      }
